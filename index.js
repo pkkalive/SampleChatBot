@@ -119,3 +119,15 @@ function sendGenericMessage(sender){
 	}
 	sendRequest(sender, messageData)
 }
+
+function sendImageMessage (sender, imageURL){
+	let messageData = {
+	  "attachment":{
+      "type":"image",
+      "payload":{
+        "url": imageURL
+      }
+    }
+	}
+	sendRequest(sender, messageData)
+}
