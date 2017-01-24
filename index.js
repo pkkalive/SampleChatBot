@@ -17,6 +17,9 @@ app.get('/', function(req, res) {
 
 let token = ""
 
+app.listen(app.get('port'), function() {
+	console.log("running: port")
+})
 
 app.get('/webhook/', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
