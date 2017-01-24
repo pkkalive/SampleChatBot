@@ -92,5 +92,30 @@ function sendRequest(sender, messageData){
 			console.log("response body error")
 		}
 	})
+}
 
+function sendGenericMessage(sender){
+	let messageData = {
+		"attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"Business",
+            "image_url":"http://bilmoore.com/wp-content/uploads/2011/11/network-marketing-business-plan.jpg",
+            "subtitle":"Whats is your plan ?",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://en.wikipedia.org/wiki/Business_plan",
+                "title":"More about business plan"
+              }            
+            ]      
+          }
+        ]
+      }
+  	}
+	}
+	sendRequest(sender, messageData)
 }
