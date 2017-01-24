@@ -157,4 +157,3 @@ function sendButtonMessage(sender, text){
 	}
 	sendRequest(sender, messageData)
 }
-
