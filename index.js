@@ -14,3 +14,17 @@ app.use(bodyParser.json())
 app.get('/', function(req, res) {
 	res.send("Welcome to my chatbot")
 })
+
+let token = ""
+
+
+app.get('/webhook/', function(req, res) {
+  if (req.query['hub.mode'] === 'subscribe' &&
+      req.query['hub.verify_token'] === "demochat") {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Failed validation. Make sure the validation tokens match.");
+    res.sendStatus(403);          
+  }  
+});
