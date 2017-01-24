@@ -131,3 +131,30 @@ function sendImageMessage (sender, imageURL){
 	}
 	sendRequest(sender, messageData)
 }
+
+function sendButtonMessage(sender, text){
+	let messageData = {
+	"attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text": text,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Berlin",
+            "payload":"You are in Berlin"
+            
+          },
+          {
+            "type":"postback",
+            "title":"London",
+            "payload":"You are in London"
+          }
+        ]
+      }
+    }
+	}
+	sendRequest(sender, messageData)
+}
+
