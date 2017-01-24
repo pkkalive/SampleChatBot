@@ -1,0 +1,19 @@
+{
+  "name": "samplechatbot",
+  "version": "1.0.0",
+  "description": "a sample chat bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkkalive/SampleChatBot.git"
+  },
+  "author": "Purushotham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkkalive/SampleChatBot/issues"
+  },
+  "homepage": "https://github.com/pkkalive/SampleChatBot#readme"
+}
