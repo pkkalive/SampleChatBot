@@ -46,3 +46,24 @@ app.post('/webhook/', function(req, res) {
 	}
 	res.sendStatus(200)
 })
+
+function decideMessage(sender, text1){
+	let text = text1.toLowerCase()
+	if (text.includes("hello") || text.includes("hi")) {
+		sendText(sender, "Welcome to My Chat !! Where do you stay?")
+	} else if (text.includes("berlin")) {
+		sendText(sender, "Welcome to Berlin")
+		sendImageMessage(sender, "http://wikitravel.org/upload/en/thumb/2/2b/Berlin_Brandenburger_Tor_Abend.jpg/510px-Berlin_Brandenburger_Tor_Abend.jpg")
+
+	} else if (text.includes("london")) {
+		sendText(sender, "Welcome to London") 
+		sendImageMessage(sender, "http://littleatoms.com/sites/default/files/styles/imagedetail/public/post/image/london.png")
+
+	} else if (text.includes("business")) {
+		sendGenericMessage(sender)
+	} else {
+		sendText(sender, "I am in Berlin")
+		sendButtonMessage(sender, "Choose your assistance provider?")
+	}
+
+}
